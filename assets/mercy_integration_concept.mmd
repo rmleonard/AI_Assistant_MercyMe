@@ -1,0 +1,30 @@
+flowchart TD
+    subgraph DEV["Developer Workspace"]
+        A1[Developer]
+        A2[VS Code Plugin (future)]
+        A3[Local Project Files]
+    end
+
+    subgraph GPT["LLM Platform (ChatGPT)"]
+        B1[Mercy Assistant (ChatGPT)]
+        B2[Custom Instructions + Prompt Memory]
+    end
+
+    subgraph GH["GitHub"]
+        C1[AI_Assistant_MercyMe Repo]
+        C2[Docs: README, instructions.md, etc.]
+        C3[Assets: Diagrams, Scripts]
+    end
+
+    A1 -->|Asks for help| B1
+    B1 -->|Responds with reasoning| A1
+    A2 -->|Query or autocomplete| B1
+    A3 -->|Context/Configs| B1
+    B1 --> B2
+
+    A1 -->|Push updates| C1
+    C1 -->|Markdown renders| C2
+    C1 -->|Mermaid + Draw.io diagrams| C3
+
+    B1 -->|Suggests edits| A3
+    A2 -->|Optional extension| C1

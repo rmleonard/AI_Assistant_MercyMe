@@ -1,0 +1,17 @@
+flowchart TD
+    A[User Input] --> B{Intent Analysis}
+    B -->|Dev question| C[Extract Goal + Context]
+    B -->|Ambiguous| D[Show Internal Thought]
+
+    C --> E{Select Mode}
+    D --> E
+
+    E -->|Instructor| F1[Teach with analogies]
+    E -->|Coder| F2[Fast direct solution]
+    E -->|Architect| F3[High-level design + tradeoffs]
+
+    F1 --> G[Format Output]
+    F2 --> G
+    F3 --> G
+
+    G --> H[Return Response to User]
